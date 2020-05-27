@@ -3,6 +3,9 @@
         <div class="success_massage">操作成功！！！
             {{this.$route.params.message}}
         </div>
+        <div class="go_home">
+            <el-button type="info" @click="toHome">@去首页@</el-button>
+        </div>
         <div class="exit_btn">
             <el-button type="info" @click="logout">安全退出</el-button>
         </div>
@@ -17,6 +20,10 @@
         font-size: 30px;
         text-align: center;
     }
+    .go_home{
+        margin-top:15px;
+        margin-bottom: 10px;
+    }
 </style>
 
 <script>
@@ -30,6 +37,9 @@ export default {
         logout(){
             window.sessionStorage.clear();
             this.$router.push('/login');
+        },
+        toHome(){
+            this.$router.push('/home');
         },
     },
 }
