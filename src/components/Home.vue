@@ -14,13 +14,14 @@
         <!--伸缩按钮-->
         <div class="toggle-button" @click="toggleCollapase">|||</div>
         <!--侧边栏菜单区 unique-opened="true" 只保持一个菜单展开 router开启路由-->
-        <el-menu background-color="#545c64" text-color="#fff" active-text-color="#ffd04b">
+        <el-menu background-color="#545c64" text-color="#fff" active-text-color="#ffd04b"
+        :router="true">
           <el-submenu :index="item.id+''" v-for="item in menuList" :key="item.id">
             <template slot="title">
               <i :class="iconsObject[item.id]"></i>
               <span>{{item.title}}</span>
             </template>
-            <el-menu-item  :index="it.id+''" v-for="it in item.slist" :key="it.id">
+            <el-menu-item  :index="it.path+''" v-for="it in item.slist" :key="it.id">
               <template slot="title" >
                 <i :class="iconsObject[it.id]"></i>
                 <span>{{it.title}}</span>
