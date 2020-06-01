@@ -13,9 +13,9 @@
       <el-aside :width="isCollapse ?'64px':'200px'">
         <!--伸缩按钮-->
         <div class="toggle-button" @click="toggleCollapase">|||</div>
-        <!--侧边栏菜单区 unique-opened="true" 只保持一个菜单展开 router开启路由-->
-        <el-menu background-color="#545c64" text-color="#fff" active-text-color="#ffd04b"
-        :router="true">
+        <!--侧边栏菜单区 unique-opened="true" 只保持一个菜单展开 router开启路由 active-text-color 颜色-->
+        <el-menu background-color="#545c64" text-color="#fff" active-text-color="#409eff" unique-opened :collapse="isCollapse" 
+          :collapse-transition="false"  :router="true">
           <el-submenu :index="item.id+''" v-for="item in menuList" :key="item.id">
             <template slot="title">
               <i :class="iconsObject[item.id]"></i>
